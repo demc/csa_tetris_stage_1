@@ -47,7 +47,7 @@ Check the status of your repository. Notice that the files you've modified are l
 
 `git status`
 
-![git status](gitStatus.png)
+![git status](gitStatus.jpg)
 
 Add the files you want to commit to the staging area:
 
