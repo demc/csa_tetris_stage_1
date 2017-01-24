@@ -46,37 +46,58 @@ public class SShape {
   }
   
   public boolean moveLeft() {
-    boolean left =
-      grid.isEmpty(col0 - 1, row0) &&
-      grid.isInBounds(col0 - 1, row0);
     
-    if (left) {
-      --colOrigin;
-      --col0;
-      --col1;
-      --col2;
+    if (direction == 0) {
+      boolean left0 =
+        grid.isEmpty(col0 - 1, row0) &&
+        grid.isInBounds(col0 - 1, row0);
+      boolean left1 =
+        grid.isEmpty(col1 - 1, row1) &&
+        grid.isInBounds(col1 - 1, row1);
       
-      return true;
+      if (left0 && left1) {
+        --colOrigin;
+        --col0;
+        --col1;
+        --col2;
+        
+        return true;
+      } 
+    } else if (direction == 1) {
+      // TODO
+    } else if (direction == 2) {
+      // TODO
+    } else if (direction == 3) {
+      // TODO
     }
     
     return false;
   }
   
   public boolean moveRight() {
-    boolean rightTop =
-      grid.isEmpty(col2 + 1, row0) &&
-      grid.isInBounds(col2 + 1, row0);
-    boolean rightBottom =
-      grid.isEmpty(colOrigin + 1, row0) &&
-      grid.isInBounds(colOrigin + 1, row0);
     
-    if (rightTop && rightBottom) {
-      ++colOrigin;
-      ++col0;
-      ++col1;
-      ++col2;
+    if (direction == 0) {
+      boolean rightTop =
+        grid.isEmpty(col2 + 1, row2) &&
+        grid.isInBounds(col2 + 1, row2);
+      boolean rightBottom =
+        grid.isEmpty(colOrigin + 1, rowOrigin) &&
+        grid.isInBounds(colOrigin + 1, rowOrigin);
       
-      return true;
+      if (rightTop && rightBottom) {
+        ++colOrigin;
+        ++col0;
+        ++col1;
+        ++col2;
+        
+        return true;
+      }
+    } else if (direction == 1) {
+      // TODO
+    } else if (direction == 2) {
+      // TODO
+    } else if (direction == 3) {
+      // TODO
     }
     
     return false;
