@@ -23,23 +23,34 @@ public class SShape {
   }
   
   public boolean moveDown() {
-    boolean left =
-      grid.isEmpty(col0, row0 + 1) &&
-      grid.isInBounds(col0, row0 + 1);
-    boolean down =
-      grid.isEmpty(colOrigin, rowOrigin + 1) &&
-      grid.isInBounds(colOrigin, rowOrigin + 1);
-    boolean right =
-      grid.isEmpty(col2, row2 + 1) &&
-      grid.isInBounds(col2, row2 + 1);
+    
+    if (direction == 0) {
+      boolean left =
+        grid.isEmpty(col0, row0 + 1) &&
+        grid.isInBounds(col0, row0 + 1);
+      boolean down =
+        grid.isEmpty(colOrigin, rowOrigin + 1) &&
+        grid.isInBounds(colOrigin, rowOrigin + 1);
+      boolean right =
+        grid.isEmpty(col2, row2 + 1) &&
+        grid.isInBounds(col2, row2 + 1);
+        
+      if (left && down && right) {
+        ++rowOrigin;
+        ++row0;
+        ++row1;
+        ++row2;
+  
+        return true;
+      } else if (direction == 1) {
+        // TODO
+      } else if (direction == 2) {
+        // TODO
+      } else if (direction == 3) {
+        // TODO
+      }
       
-    if (left && down && right) {
-      ++rowOrigin;
-      ++row0;
-      ++row1;
-      ++row2;
-
-      return true;
+      return false;
     }
       
     return false;

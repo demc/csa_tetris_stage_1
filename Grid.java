@@ -22,6 +22,7 @@ public class Grid extends JPanel {
   
   public void setShape(IShape iShape) {
     i = iShape;
+    // Uncomment this to test your IShape
     // i.grid = this;
     s = null;
     z = null;
@@ -30,6 +31,7 @@ public class Grid extends JPanel {
   
   public void setShape(ZShape zShape) {
     z = zShape;
+    // Uncomment this to test your ZShape
     // z.grid = this;
     i = null;
     s = null;
@@ -42,6 +44,16 @@ public class Grid extends JPanel {
     if (s != null) {
       moved = s.moveDown();
     }
+    
+    // Uncomment this to test your IShape.moveDown() method.
+    // if (i != null) {
+    //   moved = i.moveDown();
+    // }
+     
+    // Uncomment this to test your ZShape.moveDown() method.
+    // if (z != null) {
+    //   moved = z.moveDown();
+    // }
     
     if (moved) {
       repaint();
