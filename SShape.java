@@ -42,17 +42,17 @@ public class SShape {
         ++row2;
   
         return true;
-      } else if (direction == 1) {
-        // TODO
-      } else if (direction == 2) {
-        // TODO
-      } else if (direction == 3) {
-        // TODO
       }
-      
+    
       return false;
+    } else if (direction == 1) {
+      // TODO
+    } else if (direction == 2) {
+      // TODO
+    } else if (direction == 3) {
+      // TODO
     }
-      
+
     return false;
   }
   
